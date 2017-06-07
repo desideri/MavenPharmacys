@@ -1,0 +1,52 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.software2.examples.pharmacysapp;
+
+/**
+ *
+ * @author Stephany
+ */
+public class Producto {
+    String nombre; // El nombre del producto.
+    String descripcion; // La descripcion del producto.
+    int stock; // El stock del producto.
+    int limite; //El limite de ese producto por pedido
+
+    public Producto(){}
+    
+    public Producto(String nombre, String descripcion, int stock, int limite) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.stock = stock;
+        this.limite = limite;
+    }
+    
+    public int validar_stock(){
+        if (this.getStock() == 0 || this.getStock()< 0 || this.getStock() > 100)
+            return 0;
+        return 1;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+    
+    public String crear_producto(){
+        if (this.validar_stock() == 1) {
+            System.out.println("Usted ha creado:" + this.toString());
+            
+            return "Se creo el producto exitosamente!";
+        }
+        return "No se pudo crear el producto.Verifique el stock ingresado.";
+    }
+    
+    @Override
+    public String toString() {
+        return "Producto{" + "nombre=" + nombre + ", stock=" + stock + ", limite=" + limite + '}';
+    }
+    
+    
+}
