@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.software2.examples.pharmacysapp;
-
+import java.util.ArrayList;
 /**
  *
  * @author Stephany
@@ -14,15 +14,18 @@ public class Producto {
     String descripcion; // La descripcion del producto.
     int stock; // El stock del producto.
     int limite; //El limite de ese producto por pedido
+    double precio;
 
     public Producto(){}
     
-    public Producto(String nombre, String descripcion, int stock, int limite) {
+    public Producto(String nombre, String descripcion, int stock, int limite, double precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.stock = stock;
         this.limite = limite;
+        this.precio = precio;
     }
+    
     
     public int validar_stock(){
         if (this.getStock() == 0 || this.getStock()< 0 || this.getStock() > 100)
@@ -33,6 +36,11 @@ public class Producto {
     public int getStock() {
         return stock;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
     
     public String crear_producto(){
         if (this.validar_stock() == 1) {
@@ -43,9 +51,10 @@ public class Producto {
         return "No se pudo crear el producto.Verifique el stock ingresado.";
     }
     
+    
     @Override
     public String toString() {
-        return "Producto{" + "nombre=" + nombre + ", stock=" + stock + ", limite=" + limite + '}';
+        return "Producto{" + "nombre=" + nombre + '}';
     }
     
     

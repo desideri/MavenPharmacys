@@ -17,5 +17,12 @@ public class DetallePedido {
         this.p = p;
         this.cantidad = cantidad;
     }
+
+    @Override
+    public String toString() {
+        return "DetallePedido{" + "p=" + p + ", cantidad=" + cantidad + '}';
+    }
+    
+    
       
 }
