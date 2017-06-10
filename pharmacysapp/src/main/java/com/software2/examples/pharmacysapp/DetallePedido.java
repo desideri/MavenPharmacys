@@ -5,6 +5,7 @@
  */
 package com.software2.examples.pharmacysapp;
 
+
 /**
  *
  * @author Stephany
@@ -12,15 +13,23 @@ package com.software2.examples.pharmacysapp;
 public class DetallePedido {
    Producto p;
    int cantidad;
+   double subtotal;
 
     public DetallePedido(Producto p, int cantidad) {
         this.p = p;
         this.cantidad = cantidad;
+        this.subtotal=0;
+    }
+    
+    
+    public double SubtotalProductsos(DetallePedido D){
+            return (D.p.precio)*(D.cantidad);
     }
 
     @Override
     public String toString() {
-        return "DetallePedido{" + "p=" + p + ", cantidad=" + cantidad + '}';
+        subtotal= this.SubtotalProductsos(this);
+        return "DetallePedido{" + "p=" + p + ", cantidad=" + cantidad +", subtotal= "+ subtotal + "}";
     }
     
     

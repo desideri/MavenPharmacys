@@ -52,10 +52,11 @@ public class Producto {
     }
     
     
-    @Override
+    @Override //visualiza catalogo
     public String toString() {
         return "Producto{" + "nombre=" + nombre + '}';
     }
+    
     
     
 }
